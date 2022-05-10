@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
 
 public class gridmouvement : MonoBehaviour
 {
-    public int Mouvementnumber;
-    public int MouvementMouved;
+    public float Mouvementnumber = 2;
+    public float MouvementMouved;
 
     private float turnNumber;
     void Start()
@@ -18,10 +16,6 @@ public class gridmouvement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
-                    {
-                    Mouvementnumber = Random.Range(1,11);
-                    }
         if (Input.GetKeyDown(KeyCode.P))
                     {
                     MouvementMouved = 0;
@@ -51,18 +45,6 @@ public class gridmouvement : MonoBehaviour
                     MouvementMouved += 1;
                     }
                 
-              
-
              }
     }   
-    void OnTriggerEnter(Collider other)
-        {
-              if (Mouvementnumber == MouvementMouved)
-                    {
-                        if (gameObject.tag == "test")
-                        Debug.Log("we are loading the scene");
-                        SceneManager.LoadScene("figthing", LoadSceneMode.Additive);
-                    } 
-        }
-
 }
